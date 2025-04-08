@@ -8,6 +8,7 @@ import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.checkerframework.checker.units.qual.A;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,7 +39,11 @@ public class HopperMain extends JavaPlugin implements SlimefunAddon {
             return;
         }
 
-        matlibInstance.onEnable();
+        matlibInstance = new AddonInitialization(this, "SlimefunHopper")
+            .displayName("粘液漏斗")
+            .onEnable()
+            .cast()
+        ;
         Config addonConfig = new Config(this);
         Bukkit.getServer().getPluginManager().registerEvents(new HopperListener(addonConfig), this);
         group = new InstructionGroup()
@@ -54,6 +59,7 @@ public class HopperMain extends JavaPlugin implements SlimefunAddon {
         getLogger().log(Level.INFO, "#######################################################");
     }
     public void onDisable() {
+
         matlibInstance.onDisable();
         matlibInstance = null;
         Bukkit.getScheduler().cancelTasks(this);

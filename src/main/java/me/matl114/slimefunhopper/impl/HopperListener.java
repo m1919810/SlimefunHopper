@@ -16,6 +16,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.HopperInventorySearchEvent;
 import org.bukkit.inventory.Inventory;
@@ -30,7 +31,7 @@ import static me.matl114.matlib.nmsMirror.impl.NMSLevel.TILE_ENTITIES;
 public class HopperListener implements Listener {
     int override;
     public HopperListener(Config server){
-        override = Math.max( server.getOrSetDefault("options.override-slimefun-hopper-speed", -1), 64);
+        override = server.getOrSetDefault("options.override-slimefun-hopper-speed", -1);
     }
     final Reference2ReferenceArrayMap<World,Object> cachedHandledWorld = new Reference2ReferenceArrayMap<>();
 
@@ -51,7 +52,7 @@ public class HopperListener implements Listener {
     static{
         FULL_INVENTORY.setItem(0, ChestMenuUtils.getBackground().clone());
     }
-    @EventHandler
+    @EventHandler(priority = EventPriority.MONITOR)
     public void testSlimefunInventoryHopper(HopperInventorySearchEvent hopper){
         Location loc = hopper.getSearchBlock().getLocation();
         BlockMenu menu = BlockDataCache.getManager().getMenu(loc);
