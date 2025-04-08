@@ -34,13 +34,13 @@ public class InstructionGroup  implements Manager {
         );
         ItemStack info1 = new CleanItemStack(
             Material.KNOWLEDGE_BOOK,
-            AddUtils.colorRandomString("说明书 1"),
-            "&7本附属增加了若干与漏斗相关的特性",
-            "&7具体特性如下:"
+            AddUtils.colorRandomString("说明书"),
+            "&7虽然叫粘液漏斗,但本附属将会增加红石有关的特性",
+            "&7当前已实现的特性如下:"
         );
         ItemStack info2 = new CleanItemStack(
             Material.HOPPER,
-            AddUtils.colorRandomString("特性1: 漏斗将可直接和粘液机器交互"),
+            AddUtils.colorRandomString("功能: 漏斗将可直接和粘液机器交互"),
             "&7本附属使漏斗可以直接抓取和推送粘液机器中的物品",
             "&7将漏斗像与原版箱子交互一样放置",
             "&7即可交互粘液机器的槽位",
@@ -49,7 +49,7 @@ public class InstructionGroup  implements Manager {
             "&7其他情况,只会向机器的可输入槽位输入",
             "&7漏斗的速度&a默认和原版漏斗一致",
             "&7可以在spigot.yml中修改原版速度的货运速度",
-            "&7也可以在本附属的配置文件中专门修改对粘液机器的漏斗货运速度"
+            "&7也可以在本附属的配置文件中专门修改对粘液机器的漏斗传输速度"
         );
         this.group = new CustomItemGroup(
             new NamespacedKey("slimefunhopper","instruction"),
