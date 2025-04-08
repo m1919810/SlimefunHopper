@@ -58,8 +58,8 @@ public class InstructionGroup  implements Manager {
         )
             .setLoader(
                 CustomMenuGroup.defaultGroupTemplate(icon.getItemMeta().getDisplayName())
-                    .addItem(0,info1 )
-                    .addItem(1, info2)
+                    .addItem(0,info1 , CustomMenuGroup.CustomMenuClickHandler.ofEmpty())
+                    .addItem(1, info2, CustomMenuGroup.CustomMenuClickHandler.ofEmpty())
                 ,
                 ()-> Map.of(9, this.group),
                 Map.of()
