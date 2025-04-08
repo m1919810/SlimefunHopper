@@ -61,7 +61,7 @@ public class InstructionGroup  implements Manager {
                     .addItem(0,info1 , CustomMenuGroup.CustomMenuClickHandler.ofEmpty())
                     .addItem(1, info2, CustomMenuGroup.CustomMenuClickHandler.ofEmpty())
                 ,
-                ()-> Map.of(9, this.group),
+                Map.of(),
                 Map.of()
             )
             .setBackButton(1)
