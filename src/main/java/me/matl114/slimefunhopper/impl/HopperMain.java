@@ -4,6 +4,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import me.matl114.matlib.core.AddonInitialization;
+import me.matl114.matlib.core.UtilInitialization;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
@@ -23,15 +24,15 @@ public class HopperMain extends JavaPlugin implements SlimefunAddon {
         repo="SlimefunHopper";
         branch="master";
     }
-    AddonInitialization matlibInstance;
+    UtilInitialization matlibInstance;
     InstructionGroup group ;
     public void onEnable(){
         if (!PaperLib.isPaper()) {
             getLogger().log(Level.WARNING, "#######################################################");
             getLogger().log(Level.WARNING, "");
-            getLogger().log(Level.WARNING, "自 25/2/1 起 LogiTech");
+            getLogger().log(Level.WARNING, "自 25/2/1 起 Slimefun及其附属");
             getLogger().log(Level.WARNING, "转为 Paper 插件, 你必须要使用 Paper");
-            getLogger().log(Level.WARNING, "或其分支才可使用 LogiTech.");
+            getLogger().log(Level.WARNING, "或其分支才可使用 Slimefun及其附属");
             getLogger().log(Level.WARNING, "立即下载 Paper: https://papermc.io/downloads/paper");
             getLogger().log(Level.WARNING, "");
             getLogger().log(Level.WARNING, "#######################################################");
@@ -39,7 +40,7 @@ public class HopperMain extends JavaPlugin implements SlimefunAddon {
             return;
         }
 
-        matlibInstance = new AddonInitialization(this, "SlimefunHopper")
+        matlibInstance = new UtilInitialization(this, "SlimefunHopper")
             .displayName("粘液漏斗")
             .onEnable()
             .cast()

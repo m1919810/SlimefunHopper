@@ -2,8 +2,6 @@ package me.matl114.slimefunhopper.impl;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
-import io.github.thebusybiscuit.slimefun4.api.items.ItemState;
-import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import me.matl114.matlib.core.Manager;
 import me.matl114.matlib.implement.slimefun.menu.guideMenu.CustomItemGroup;
@@ -17,8 +15,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class InstructionGroup  implements Manager {
     Plugin pl;
