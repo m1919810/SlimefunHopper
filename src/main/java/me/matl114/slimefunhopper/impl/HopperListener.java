@@ -1,5 +1,9 @@
 package me.matl114.slimefunhopper.impl;
 
+import com.xzavier0722.mc.plugin.slimefun4.storage.controller.SlimefunBlockData;
+import com.xzavier0722.mc.plugin.slimefun4.storage.util.StorageCacheUtils;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.core.attributes.NotHopperable;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import it.unimi.dsi.fastutil.objects.Reference2ReferenceArrayMap;
@@ -53,8 +57,19 @@ public class HopperListener implements Listener {
     }
     @EventHandler(priority = EventPriority.MONITOR)
     public void testSlimefunInventoryHopper(HopperInventorySearchEvent hopper){
+        Location blockLocation = hopper.getBlock().getLocation();
+        SlimefunBlockData blockData = StorageCacheUtils.getBlock(blockLocation);
+        // check hopperable
+        if(blockData != null){
+            if(SlimefunItem.getById(blockData.getSfId()) instanceof NotHopperable){
+                return;
+            }
+            if(blockData.getBlockMenu() != null){
+                return;
+            }
+        }
         Location loc = hopper.getSearchBlock().getLocation();
-        BlockMenu menu = BlockStorage.getInventory(loc);
+        BlockMenu menu = StorageCacheUtils.getMenu(loc);
         if(menu != null){
             if(hopper.getContainerType() == HopperInventorySearchEvent.ContainerType.SOURCE){
                 limitGrabbingSlots(menu, hopper.getBlock());

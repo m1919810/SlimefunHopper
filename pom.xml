@@ -102,10 +102,16 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.StarWishsama</groupId>
+            <groupId>com.github.SlimefunGuguProject</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>2024.3</version>
+            <version>2025.1</version>
             <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.papermc</groupId>
+                    <artifactId>Paperlib</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>net.guizhanss</groupId>
@@ -114,9 +120,15 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.m1919810</groupId>
-            <artifactId>matlib</artifactId>
-            <version>2b66ac7</version>
+            <groupId>com.github.m1919810.matlib</groupId>
+            <artifactId>matlib-all</artifactId>
+            <version>344aa5f</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.m1919810.matlib</groupId>
+            <artifactId>matlib-slimefun</artifactId>
+            <version>344aa5f</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
