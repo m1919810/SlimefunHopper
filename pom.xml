@@ -127,13 +127,13 @@
         <dependency>
             <groupId>com.github.m1919810.matlib</groupId>
             <artifactId>matlib-all</artifactId>
-            <version>344aa5f</version>
+            <version>35bee65</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.github.m1919810.matlib</groupId>
             <artifactId>matlib-slimefun</artifactId>
-            <version>344aa5f</version>
+            <version>35bee65</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
